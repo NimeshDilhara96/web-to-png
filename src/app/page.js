@@ -1,4 +1,5 @@
-import Converter from"@/components/Converter";
+import Converter from "@/components/Converter";
+import FaqAccordion from "@/components/FaqAccordion";
 
 // 1. Next.js App Router Metadata API
 export const metadata = {
@@ -53,8 +54,29 @@ export default function Home() {
  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}
  />
  
- {/* Hero Header Section */}
- <header className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 text-center">
+  {/* Top Navbar */}
+  <nav className="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between items-center h-16">
+        {/* Logo/Brand */}
+        <div className="flex-shrink-0 flex items-center">
+          <a href="#" className="text-xl font-bold text-blue-600 tracking-tight">WebP Converter</a>
+        </div>
+        {/* Nav Links */}
+        <div className="flex items-center space-x-4 sm:space-x-8">
+          <a href="#why-webp" className="hidden sm:block text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Why WebP?</a>
+          <a href="#instructions" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Instructions</a>
+          <a href="#faq" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">FAQ</a>
+          <a href="#converter" className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+            Convert Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {/* Hero Header Section */}
+  <header className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 text-center">
  <div className="inline-block mb-4 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide">
  100% Free & Private
  </div>
@@ -67,14 +89,14 @@ export default function Home() {
  </header>
 
  {/* Main Converter Application */}
- <main className="px-4 sm:px-6 lg:px-8 pb-16 relative z-10">
+ <main id="converter" className="px-4 sm:px-6 lg:px-8 pb-16 relative z-10 scroll-mt-24">
  <Converter />
  </main>
 
  {/* Long-form SEO Content */}
  <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
  
- <section>
+ <section id="why-webp" className="scroll-mt-24">
  <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Use WebP?</h2>
  <p className="text-lg text-gray-600 leading-relaxed mb-6">
  WebP is a modern image format developed by Google that provides superior lossless and lossy compression for images on the web. By using WebP, webmasters and developers can create smaller, richer images that make the web significantly faster.
@@ -95,7 +117,7 @@ export default function Home() {
  </ul>
  </section>
 
- <section>
+ <section id="instructions" className="scroll-mt-24">
  <h2 className="text-3xl font-bold mb-6 text-gray-900">How to Use This Tool</h2>
  <ol className="list-decimal pl-6 text-lg text-gray-600 space-y-3 marker:text-blue-600 marker:font-bold">
  <li className="pl-2">Drag and drop your image (PNG, JPG, JPEG, or GIF) into the dashed box above, or click to open your file browser.</li>
@@ -106,22 +128,9 @@ export default function Home() {
  </ol>
  </section>
 
- <section>
+ <section id="faq" className="scroll-mt-24">
  <h2 className="text-3xl font-bold mb-8 text-gray-900">Frequently Asked Questions</h2>
- <div className="space-y-8">
- <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
- <h3 className="text-xl font-bold mb-3 text-gray-900">Are my images uploaded to a server?</h3>
- <p className="text-gray-600 leading-relaxed">Absolutely not. All conversions happen entirely on your local device using your browser's native HTML5 Canvas API. Your files never leave your computer, ensuring 100% strict privacy and security.</p>
- </div>
- <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
- <h3 className="text-xl font-bold mb-3 text-gray-900">Is there a file size limit?</h3>
- <p className="text-gray-600 leading-relaxed">Because there are no server costs or bandwidth limitations involved, there are no artificial file size caps. However, exceptionally large images may be constrained by your device's available RAM.</p>
- </div>
- <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
- <h3 className="text-xl font-bold mb-3 text-gray-900">Is this tool really free?</h3>
- <p className="text-gray-600 leading-relaxed">Yes! This micro-tool is completely free to use with absolutely no hidden costs, subscriptions, or watermarks.</p>
- </div>
- </div>
+ <FaqAccordion />
  </section>
  
  </article>
