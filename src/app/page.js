@@ -22,6 +22,9 @@ export const metadata = {
     title: "Free Image to WebP Converter",
     description: "Lightning-fast, strictly client-side image to WebP converter.",
     type: "website",
+  },
+  verification: {
+    google: "MPKtElHbSG4pCpKJqhAXIDSqeu1FfaagHWVTPWr4daM",
   }
 };
 
