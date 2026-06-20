@@ -2,16 +2,27 @@ import Converter from"@/components/Converter";
 
 // 1. Next.js App Router Metadata API
 export const metadata = {
- title:"Free Image to WebP Converter | Fast, Private, No Limits",
- description:"Convert your PNG, JPG, and GIF images to WebP instantly directly in your browser. 100% private, zero file size limits, and no server uploads.",
- alternates: {
- canonical:"https://tools.mommentx.space",
-},
- openGraph: {
- title:"Free Image to WebP Converter",
- description:"Lightning-fast, strictly client-side image to WebP converter.",
- type:"website",
-}
+  title: "Free Image to WebP Converter | Fast, Private, No Limits",
+  description: "Convert your PNG, JPG, and GIF images to WebP instantly directly in your browser. 100% private, zero file size limits, and no server uploads.",
+  keywords: [
+    "Image to WebP converter",
+    "Convert image to WebP",
+    "JPG to WebP converter",
+    "PNG to WebP converter",
+    "Bulk Image to WebP converter",
+    "Free online WebP converter",
+    "Fast WebP converter",
+    "Lossless WebP converter",
+    "WebP converter no upload"
+  ],
+  alternates: {
+    canonical: "https://tools.mommentx.space",
+  },
+  openGraph: {
+    title: "Free Image to WebP Converter",
+    description: "Lightning-fast, strictly client-side image to WebP converter.",
+    type: "website",
+  }
 };
 
 export default function Home() {
